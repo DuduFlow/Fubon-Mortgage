@@ -1,1 +1,738 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071a2e">
+  <meta name="description" content="北富銀房貸分享的規則、案例與金句整理，並區分官方規則、簡報內容、口述經驗與風險警示。">
+  <title>北富銀房貸筆記｜規則、案例、金句</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23071a2e'/%3E%3Cpath d='M12 31 32 15l20 16v20H38V39H26v12H12Z' fill='none' stroke='%23d8a76e' stroke-width='5' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #071a2e;
+      --ink-2: #0e2b48;
+      --paper: #f5f1ea;
+      --card: #fffdf8;
+      --copper: #b87542;
+      --copper-2: #d9a56e;
+      --line: rgba(7, 26, 46, .14);
+      --muted: #5e6874;
+      --blue: #286685;
+      --green: #1e705f;
+      --red: #a43f37;
+      --amber: #9a641e;
+      --shadow: 0 18px 60px rgba(7, 26, 46, .10);
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(7,26,46,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(7,26,46,.025) 1px, transparent 1px),
+        var(--paper);
+      background-size: 32px 32px;
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; }
+    button { font: inherit; }
+    .shell { min-height: 100vh; }
+
+    .rail {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 264px;
+      padding: 34px 26px;
+      color: #f8f4ed;
+      background: var(--ink);
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: .06em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(217,165,110,.55);
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      color: var(--copper-2);
+      flex: 0 0 auto;
+    }
+
+    .brand-mark svg { width: 25px; height: 25px; }
+    .brand small { display: block; font-size: .72rem; font-weight: 500; opacity: .62; letter-spacing: .03em; }
+
+    nav { margin-top: 44px; display: grid; gap: 7px; }
+    nav a {
+      text-decoration: none;
+      color: rgba(255,255,255,.68);
+      padding: 9px 12px;
+      border-radius: 9px;
+      transition: .2s ease;
+      font-size: .94rem;
+    }
+    nav a:hover, nav a.active { color: white; background: rgba(255,255,255,.08); }
+
+    .rail-note {
+      margin-top: auto;
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 18px;
+      color: rgba(255,255,255,.58);
+      font-size: .78rem;
+      line-height: 1.6;
+    }
+
+    main { margin-left: 264px; }
+    .hero {
+      position: relative;
+      min-height: 520px;
+      padding: 64px clamp(30px, 7vw, 110px) 52px;
+      color: white;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(217,165,110,.18), transparent 28%),
+        linear-gradient(135deg, var(--ink) 0%, #0d2f4f 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      border: 1px solid rgba(217,165,110,.22);
+      border-radius: 50%;
+      right: -120px;
+      top: 90px;
+      box-shadow: 0 0 0 70px rgba(217,165,110,.04), 0 0 0 140px rgba(217,165,110,.025);
+    }
+
+    .eyebrow { color: var(--copper-2); font-size: .86rem; letter-spacing: .18em; font-weight: 750; text-transform: uppercase; }
+    h1 { font-family: "Noto Serif TC", "Songti TC", serif; font-size: clamp(3rem, 5vw, 5rem); line-height: 1.02; margin: 18px 0 20px; letter-spacing: -.05em; max-width: 920px; }
+    h1 span { color: var(--copper-2); }
+    .lead { max-width: 760px; font-size: clamp(1.06rem, 1.7vw, 1.28rem); color: rgba(255,255,255,.76); margin: 0 0 24px; }
+
+    .hero-actions { position: relative; z-index: 2; display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
+    .hero-action { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 9px 17px; border-radius: 11px; border: 1px solid rgba(255,255,255,.22); color: white; text-decoration: none; font-weight: 800; font-size: .9rem; transition: .2s ease; }
+    .hero-action.primary { color: var(--ink); background: var(--copper-2); border-color: var(--copper-2); }
+    .hero-action:hover { transform: translateY(-1px); border-color: var(--copper-2); }
+
+    .hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: 980px; }
+    .hero-stat { border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.06); border-radius: 15px; padding: 20px; backdrop-filter: blur(12px); }
+    .hero-stat strong { display: block; color: var(--copper-2); font-size: 1.8rem; line-height: 1.1; }
+    .hero-stat span { color: rgba(255,255,255,.63); font-size: .88rem; }
+
+    .content { max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 84px) 96px; }
+    section { scroll-margin-top: 24px; padding-top: 84px; }
+    .section-head { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 28px; }
+    .kicker { color: var(--copper); text-transform: uppercase; letter-spacing: .15em; font-weight: 800; font-size: .78rem; }
+    h2 { font-family: "Noto Serif TC", "Songti TC", serif; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.16; margin: 7px 0 0; letter-spacing: -.03em; }
+    .section-intro { max-width: 520px; color: var(--muted); margin: 0; }
+
+    .notice {
+      margin-top: -34px;
+      position: relative;
+      z-index: 3;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--copper);
+      border-radius: 16px;
+      padding: 20px 24px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+    }
+    .notice-icon { width: 40px; height: 40px; border-radius: 50%; background: #f4e4d2; display: grid; place-items: center; font-weight: 900; color: var(--copper); }
+    .notice strong { display: block; margin-bottom: 2px; }
+    .notice p { margin: 0; color: var(--muted); font-size: .92rem; }
+
+    .calculator-shell { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); background: var(--card); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); }
+    .calculator-form { padding: 28px; border-right: 1px solid var(--line); }
+    .calculator-form h3, .calculator-output h3 { margin: 0 0 6px; font-size: 1.18rem; }
+    .calculator-form > p, .calculator-output > p { margin: 0 0 20px; color: var(--muted); font-size: .88rem; }
+    .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+    .field { display: grid; gap: 6px; }
+    .field label { font-size: .82rem; font-weight: 800; }
+    .field small { color: var(--muted); font-size: .72rem; line-height: 1.4; }
+    .input-wrap { position: relative; }
+    .input-wrap input { width: 100%; height: 46px; border: 1px solid var(--line); border-radius: 11px; padding: 8px 42px 8px 12px; color: var(--ink); background: white; font: inherit; font-weight: 750; outline: none; transition: .2s ease; }
+    .input-wrap input:focus { border-color: var(--copper); box-shadow: 0 0 0 3px rgba(184,117,66,.12); }
+    .input-wrap span { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: .76rem; }
+    .calculator-actions { display: flex; gap: 9px; flex-wrap: wrap; margin-top: 20px; }
+    .calc-button { min-height: 40px; border: 1px solid var(--line); border-radius: 10px; padding: 7px 13px; background: white; color: var(--ink); cursor: pointer; font-weight: 800; font-size: .82rem; }
+    .calc-button.primary { background: var(--ink); color: white; border-color: var(--ink); }
+    .calc-button:hover { border-color: var(--copper); }
+    .calculator-output { padding: 28px; background: #f0ece4; }
+    .route-results { display: grid; gap: 10px; }
+    .route-result { background: rgba(255,255,255,.75); border: 1px solid var(--line); border-left: 4px solid var(--muted); border-radius: 13px; padding: 14px 15px; }
+    .route-result.pass { border-left-color: var(--green); }
+    .route-result.warn { border-left-color: var(--amber); }
+    .route-result.fail { border-left-color: var(--red); }
+    .route-top { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
+    .route-top strong { font-size: .95rem; }
+    .route-value { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 1.08rem; font-weight: 900; }
+    .route-result.pass .route-value { color: var(--green); }
+    .route-result.warn .route-value { color: var(--amber); }
+    .route-result.fail .route-value { color: var(--red); }
+    .route-result p { margin: 4px 0 0; color: var(--muted); font-size: .78rem; }
+    .route-meter { height: 5px; overflow: hidden; margin-top: 10px; border-radius: 99px; background: rgba(7,26,46,.09); }
+    .route-meter span { display: block; height: 100%; width: 0; border-radius: inherit; background: currentColor; transition: width .25s ease; }
+    .route-result.pass .route-meter { color: var(--green); }
+    .route-result.warn .route-meter { color: var(--amber); }
+    .route-result.fail .route-meter { color: var(--red); }
+    .route-summary { margin-top: 14px; padding: 15px 16px; border-radius: 13px; color: white; background: var(--ink); }
+    .route-summary strong { display: block; color: var(--copper-2); margin-bottom: 3px; }
+    .route-summary p { margin: 0; color: rgba(255,255,255,.72); font-size: .84rem; }
+    .calculator-disclaimer { margin-top: 13px; color: var(--muted); font-size: .76rem; line-height: 1.5; }
+
+    .legend { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+    .tag { display: inline-flex; align-items: center; gap: 7px; border-radius: 99px; padding: 5px 10px; font-size: .76rem; font-weight: 750; border: 1px solid currentColor; white-space: nowrap; }
+    .tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .tag.official { color: var(--green); }
+    .tag.deck { color: var(--blue); }
+    .tag.oral { color: var(--amber); }
+    .tag.risk { color: var(--red); }
+
+    .quick-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .quick-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 26px; box-shadow: 0 10px 30px rgba(7,26,46,.05); }
+    .quick-card .num { color: var(--copper); font-weight: 900; font-size: .82rem; letter-spacing: .12em; }
+    .quick-card h3 { margin: 8px 0 8px; font-size: 1.25rem; }
+    .quick-card p { margin: 0; color: var(--muted); }
+
+    .rule-stack { display: grid; gap: 14px; }
+    .rule-card {
+      display: grid;
+      grid-template-columns: 112px 1fr auto;
+      gap: 22px;
+      align-items: start;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+    }
+    .rule-value { font-family: "Noto Serif TC", serif; color: var(--copper); font-size: 2rem; font-weight: 800; line-height: 1.05; }
+    .rule-value small { display: block; color: var(--muted); font: 700 .74rem/1.4 system-ui; margin-top: 7px; }
+    .rule-card h3 { margin: 0 0 4px; font-size: 1.14rem; }
+    .rule-card p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .source-link { color: var(--blue); font-size: .82rem; text-underline-offset: 3px; white-space: nowrap; }
+    .source-stamp { display: inline-flex; margin-top: 8px; color: var(--muted); font-size: .73rem; font-weight: 750; letter-spacing: .02em; }
+
+    .ratio-board { border-radius: 24px; overflow: hidden; background: var(--ink); color: white; box-shadow: var(--shadow); }
+    .ratio-row { display: grid; grid-template-columns: 170px 1fr 180px; gap: 26px; padding: 27px 30px; border-bottom: 1px solid rgba(255,255,255,.1); align-items: center; }
+    .ratio-row:last-child { border-bottom: 0; }
+    .ratio-title { color: var(--copper-2); font-size: 1.2rem; font-weight: 800; }
+    .formula { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 1rem; color: rgba(255,255,255,.86); }
+    .threshold { border: 1px solid rgba(217,165,110,.45); border-radius: 12px; padding: 12px 14px; text-align: center; color: var(--copper-2); font-weight: 850; }
+    .ratio-note { background: #fff5e9; color: #624625; padding: 16px 22px; font-size: .9rem; }
+
+    .asset-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+    .asset { border: 1px solid var(--line); background: var(--card); border-radius: 14px; padding: 18px; }
+    .asset strong { display: block; margin-bottom: 4px; }
+    .asset span { color: var(--muted); font-size: .86rem; }
+
+    .case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .case-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+    .case-top { padding: 24px 25px 19px; border-bottom: 1px solid var(--line); }
+    .case-top h3 { margin: 7px 0 5px; font-size: 1.23rem; }
+    .case-top p { color: var(--muted); margin: 0; font-size: .92rem; }
+    .case-body { padding: 20px 25px 24px; display: grid; gap: 14px; }
+    .calc { background: #edf3f6; border-radius: 12px; padding: 13px 15px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9rem; }
+    .verdict { display: flex; align-items: center; gap: 9px; font-weight: 800; }
+    .verdict .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(30,112,95,.11); }
+    .verdict.warn .dot { background: var(--amber); box-shadow: 0 0 0 5px rgba(154,100,30,.11); }
+    .case-foot { margin-top: auto; padding: 15px 25px; background: rgba(7,26,46,.035); color: var(--muted); font-size: .82rem; }
+
+    .risk-box { background: #fff2ef; border: 1px solid rgba(164,63,55,.25); border-radius: 20px; padding: 26px; display: grid; grid-template-columns: 58px 1fr; gap: 18px; }
+    .risk-icon { width: 54px; height: 54px; background: var(--red); color: white; border-radius: 16px; display: grid; place-items: center; font-size: 1.5rem; font-weight: 900; }
+    .risk-box h3 { margin: 0 0 8px; color: #782923; }
+    .risk-list { margin: 12px 0 0; padding-left: 1.2rem; color: #6b403c; }
+    .risk-list li + li { margin-top: 7px; }
+
+    .product-table { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--card); }
+    .product { padding: 25px; border-right: 1px solid var(--line); }
+    .product:last-child { border-right: 0; }
+    .product h3 { margin: 0 0 8px; }
+    .product p { margin: 0 0 15px; color: var(--muted); font-size: .92rem; }
+    .product ul { margin: 0; padding-left: 1.1rem; }
+    .product li + li { margin-top: 7px; }
+    .product.featured { background: var(--ink); color: white; }
+    .product.featured p { color: rgba(255,255,255,.65); }
+    .product.featured h3 { color: var(--copper-2); }
+
+    .quote-stage { display: grid; grid-template-columns: 1.25fr .75fr; gap: 18px; }
+    .quote-main { background: var(--ink); color: white; border-radius: 24px; padding: clamp(30px, 5vw, 56px); position: relative; overflow: hidden; }
+    .quote-main::before { content: "“"; position: absolute; right: 22px; top: -28px; font: 170px/1 Georgia, serif; color: rgba(217,165,110,.17); }
+    blockquote { margin: 0; font-family: "Noto Serif TC", "Songti TC", serif; font-size: clamp(1.65rem, 3.4vw, 3rem); line-height: 1.42; letter-spacing: -.03em; }
+    .quote-meta { margin-top: 24px; color: var(--copper-2); font-size: .86rem; }
+    .quote-side { display: grid; gap: 18px; }
+    .mini-quote { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 23px; }
+    .mini-quote p { font-family: "Noto Serif TC", serif; font-size: 1.2rem; margin: 0 0 12px; line-height: 1.55; }
+    .mini-quote small { color: var(--muted); }
+
+    .checklist { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    .check { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: flex; gap: 13px; align-items: flex-start; }
+    .check span { width: 26px; height: 26px; flex: 0 0 auto; border: 2px solid var(--copper); border-radius: 8px; display: grid; place-items: center; color: var(--copper); font-weight: 900; font-size: .78rem; }
+    .check strong { display: block; }
+    .check p { margin: 3px 0 0; color: var(--muted); font-size: .88rem; }
+
+    .source-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .source-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+    .source-card h3 { margin: 0 0 7px; font-size: 1rem; }
+    .source-card p { margin: 0; color: var(--muted); font-size: .88rem; }
+    .source-card a { color: var(--blue); }
+
+    footer { margin-top: 78px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: .82rem; }
+
+    .topbar, .mobile-nav { display: none; }
+
+    @media (max-width: 980px) {
+      .rail { display: none; }
+      main { margin-left: 0; }
+      .topbar { position: sticky; top: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; padding: 12px 18px; background: rgba(7,26,46,.96); color: white; backdrop-filter: blur(12px); }
+      .topbar a { color: var(--copper-2); text-decoration: none; font-weight: 800; }
+      .hero { min-height: auto; padding-top: 74px; }
+      .hero-grid { grid-template-columns: 1fr; max-width: 620px; }
+      .hero-stat { display: grid; grid-template-columns: 120px 1fr; align-items: center; }
+      .rule-card { grid-template-columns: 100px 1fr; }
+      .source-link { grid-column: 2; }
+      .asset-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .ratio-row { grid-template-columns: 130px 1fr; }
+      .threshold { grid-column: 2; text-align: left; }
+      .product-table { grid-template-columns: 1fr; }
+      .product { border-right: 0; border-bottom: 1px solid var(--line); }
+      .product:last-child { border-bottom: 0; }
+      body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
+      .mobile-nav { position: fixed; z-index: 30; left: 12px; right: 12px; bottom: calc(10px + env(safe-area-inset-bottom)); display: grid; grid-template-columns: repeat(4, 1fr); padding: 7px; border: 1px solid rgba(255,255,255,.12); border-radius: 18px; color: white; background: rgba(7,26,46,.96); box-shadow: 0 16px 45px rgba(7,26,46,.28); backdrop-filter: blur(16px); }
+      .mobile-nav a { min-width: 0; padding: 7px 3px; border-radius: 11px; color: rgba(255,255,255,.62); text-align: center; text-decoration: none; font-size: .68rem; font-weight: 750; line-height: 1.2; }
+      .mobile-nav a span { display: block; margin-bottom: 2px; color: var(--copper-2); font-size: .78rem; font-weight: 900; }
+      .mobile-nav a.active { color: white; background: rgba(255,255,255,.09); }
+    }
+
+    @media (max-width: 680px) {
+      .hero { padding: 58px 22px 60px; }
+      h1 { font-size: 2.65rem; line-height: 1.04; }
+      .content { padding-inline: 18px; }
+      section { padding-top: 66px; }
+      .section-head { display: block; }
+      .section-intro { margin-top: 13px; }
+      .notice { grid-template-columns: 1fr; padding: 20px; }
+      .calculator-shell { grid-template-columns: 1fr; }
+      .calculator-form { padding: 22px 18px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .calculator-output { padding: 22px 18px; }
+      .field-grid { grid-template-columns: 1fr; }
+      .quick-grid, .case-grid, .quote-stage, .checklist, .source-grid { grid-template-columns: 1fr; }
+      .rule-card { grid-template-columns: 1fr; gap: 13px; }
+      .source-link { grid-column: auto; }
+      .ratio-row { grid-template-columns: 1fr; gap: 10px; padding: 24px 20px; }
+      .threshold { grid-column: auto; text-align: left; }
+      .asset-grid { grid-template-columns: 1fr; }
+      .risk-box { grid-template-columns: 1fr; }
+      footer { display: block; }
+    }
+
+    @media print {
+      .rail, .topbar, .mobile-nav { display: none; }
+      main { margin-left: 0; }
+      body { background: white; }
+      .hero { min-height: auto; padding: 42px; }
+      section { break-inside: avoid; padding-top: 42px; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M4 15.5 16 6l12 9.5V27h-8v-8h-8v8H4V15.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </span>
+        <span>房貸筆記<small>北富銀分享整理</small></span>
+      </div>
+      <nav aria-label="頁面章節">
+        <a href="#calculator">案件試算</a>
+        <a href="#quick">30 秒重點</a>
+        <a href="#policy">政策規則</a>
+        <a href="#ratios">財力三條路</a>
+        <a href="#cases">案例拆解</a>
+        <a href="#products">產品判讀</a>
+        <a href="#quotes">金句</a>
+        <a href="#checklist">簽約前清單</a>
+        <a href="#sources">來源與界線</a>
+      </nav>
+      <div class="rail-note">更新日期 2026.10.02<br>來源：26 頁簡報＋約 64 分鐘逐字稿<br>非授信承諾，送件前請以銀行最新書面規定為準。</div>
+    </aside>
+
+    <div class="topbar"><strong>北富銀房貸筆記</strong><a href="#calculator">開始試算</a></div>
+
+    <main>
+      <header class="hero">
+        <div class="eyebrow">Mortgage Field Notes · 2026</div>
+        <h1>不是只看薪水，<br><span>而是看你用哪條路過件。</span></h1>
+        <p class="lead">把一場北富銀房貸分享拆成可查、可算、可回頭驗證的筆記。重點放在規則、案例與真正值得記住的判斷句。</p>
+        <div class="hero-actions"><a class="hero-action primary" href="#calculator">立即判讀三條路</a><a class="hero-action" href="#cases">先看真實案例</a></div>
+        <div class="hero-grid" aria-label="關鍵數字">
+          <div class="hero-stat"><strong>3 選 1</strong><span>收支比、資產比、流動比</span></div>
+          <div class="hero-stat"><strong>70%</strong><span>2026/9/18 起，自然人第 2 戶最高成數</span></div>
+          <div class="hero-stat"><strong>先查再簽</strong><span>聯徵、頭款、用途、謄本</span></div>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="notice">
+          <div class="notice-icon">!</div>
+          <div>
+            <strong>先看資料層級，不把業務經驗當成法規。</strong>
+            <p>綠色為官方已查證；藍色為簡報內容；黃色為逐字稿口述經驗；紅色為不宜照做的高風險作法。內規、利率與審查口徑都可能變動。</p>
+            <div class="legend" aria-label="資料標示圖例">
+              <span class="tag official">官方已查證</span><span class="tag deck">簡報整理</span><span class="tag oral">口述經驗</span><span class="tag risk">風險警示</span>
+            </div>
+          </div>
+        </div>
+
+        <section id="calculator">
+          <div class="section-head">
+            <div><div class="kicker">01 · Route Check</div><h2>案件三路快篩</h2></div>
+            <p class="section-intro">輸入同一個案件的收入、資產與負債，一次判讀收支比、資產比、流動比。這是學習快篩，不是核貸結果。</p>
+          </div>
+          <div class="calculator-shell">
+            <form class="calculator-form" id="routeForm">
+              <h3>輸入案件概況</h3>
+              <p>單位都用「萬元」，可先套用板橋案例看計算方式。</p>
+              <div class="field-grid">
+                <div class="field"><label for="monthlyIncome">認列月收入</label><div class="input-wrap"><input id="monthlyIncome" type="number" inputmode="decimal" min="0" step="0.1" value="10"><span>萬／月</span></div><small>以銀行實際可認列收入為準</small></div>
+                <div class="field"><label for="mortgagePayment">本案預估月付</label><div class="input-wrap"><input id="mortgagePayment" type="number" inputmode="decimal" min="0" step="0.1" value="9"><span>萬／月</span></div><small>本息攤還的預估月付款</small></div>
+                <div class="field"><label for="otherMonthlyDebt">其他每月負債</label><div class="input-wrap"><input id="otherMonthlyDebt" type="number" inputmode="decimal" min="0" step="0.1" value="0"><span>萬／月</span></div><small>信貸、車貸、卡費與其他房貸</small></div>
+                <div class="field"><label for="totalAssets">名下總資產</label><div class="input-wrap"><input id="totalAssets" type="number" inputmode="decimal" min="0" step="1" value="3640"><span>萬</span></div><small>含不動產與可證明資產</small></div>
+                <div class="field"><label for="financialAssets">可認列金融資產</label><div class="input-wrap"><input id="financialAssets" type="number" inputmode="decimal" min="0" step="1" value="640"><span>萬</span></div><small>存款、股票、保單等認列價值</small></div>
+                <div class="field"><label for="totalDebt">名下總負債</label><div class="input-wrap"><input id="totalDebt" type="number" inputmode="decimal" min="0" step="1" value="2400"><span>萬</span></div><small>含本案與現有全部負債</small></div>
+              </div>
+              <div class="calculator-actions">
+                <button class="calc-button primary" type="button" id="casePreset">套用板橋案例</button>
+                <button class="calc-button" type="button" id="clearForm">清除</button>
+                <button class="calc-button" type="button" id="copyResult">複製摘要</button>
+              </div>
+            </form>
+            <div class="calculator-output" aria-live="polite">
+              <h3>三條路判讀</h3>
+              <p>門檻取自簡報 P.15 與逐字稿 00:11:32，實際仍以銀行最新內規為準。</p>
+              <div class="route-results">
+                <div class="route-result" id="incomeRoute"><div class="route-top"><strong>收支比 ≤ 70%</strong><span class="route-value" id="incomeValue">—</span></div><p id="incomeNote">負債月支出 ÷ 認列月收入</p><div class="route-meter"><span id="incomeMeter"></span></div></div>
+                <div class="route-result" id="assetRoute"><div class="route-top"><strong>資產比 ≥ 170%</strong><span class="route-value" id="assetValue">—</span></div><p id="assetNote">名下總資產 ÷ 名下總負債</p><div class="route-meter"><span id="assetMeter"></span></div></div>
+                <div class="route-result" id="liquidRoute"><div class="route-top"><strong>流動比 ≥ 20–25%</strong><span class="route-value" id="liquidValue">—</span></div><p id="liquidNote">金融資產 ÷ 名下總負債</p><div class="route-meter"><span id="liquidMeter"></span></div></div>
+              </div>
+              <div class="route-summary"><strong id="routeHeadline">正在計算</strong><p id="routeSummary">輸入數字後，這裡會顯示較可能的財力認定方向。</p></div>
+              <div class="calculator-disclaimer">注意：三路任一路達門檻，只代表依分享口徑較有機會進入評估；信用、房屋條件、資金用途與銀行內規仍可能影響核貸。</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="quick">
+          <div class="section-head">
+            <div><div class="kicker">02 · Executive Brief</div><h2>30 秒重點</h2></div>
+            <p class="section-intro">這場分享的核心不是「哪家利率最低」，而是先找對財力認定路徑，再確認房屋與資金用途有沒有踩到管制。</p>
+          </div>
+          <div class="quick-grid">
+            <article class="quick-card"><div class="num">01</div><h3>過件不只看薪資</h3><p>簡報主張，收支比、資產比、流動比三條路只要其中一條符合，就有機會進入核貸評估。</p></article>
+            <article class="quick-card"><div class="num">02</div><h3>第二戶是看「貸款筆數」</h3><p>房貸管制不是單看名下有幾間房；實務會看聯徵購屋貸款筆數、標的用途與申貸當下狀態。</p></article>
+            <article class="quick-card"><div class="num">03</div><h3>頭期款來源是硬門檻</h3><p>自有資金、合理金流與用途一致性比「帳上看起來有錢」更重要；來路不明或刻意繞轉可能直接被拒。</p></article>
+            <article class="quick-card"><div class="num">04</div><h3>回復型不是免費寬限</h3><p>已還本金可轉為可動用額度，但動用後仍是負債、仍要付利息，也有到期還本與再融資風險。</p></article>
+          </div>
+        </section>
+
+        <section id="policy">
+          <div class="section-head">
+            <div><div class="kicker">03 · Rule Radar</div><h2>政策與規則雷達</h2></div>
+            <p class="section-intro">先放官方可查證的上限，再放銀行口述條件。上限不等於一定核准，銀行可以採更嚴格標準。</p>
+          </div>
+          <div class="rule-stack">
+            <article class="rule-card">
+              <div class="rule-value">7 成<small>無寬限期</small></div>
+              <div><h3>自然人第 2 戶購屋貸款</h3><p>央行自 2026/9/18 起把最高成數由 6 成調升為 7 成；銀行仍可依風險採更嚴格條件。</p><span class="source-stamp">官方｜查核 2026.10.01</span></div>
+              <a class="source-link" href="https://www.cbc.gov.tw/tw/cp-302-192864-4319f-1.html" target="_blank" rel="noopener">央行公告</a>
+            </article>
+            <article class="rule-card">
+              <div class="rule-value">3 成<small>無寬限期</small></div>
+              <div><h3>第 3 戶以上與高價住宅</h3><p>第 3 戶以上最高 3 成。簡報列的高價住宅門檻為台北 7,000 萬、新北 6,000 萬、其他地區 4,000 萬；現行管制最高 3 成。</p><span class="source-stamp">官方＋簡報｜查核 2026.10.01</span></div>
+              <a class="source-link" href="https://www.cbc.gov.tw/tw/cp-302-192864-4319f-1.html" target="_blank" rel="noopener">央行公告</a>
+            </article>
+            <article class="rule-card">
+              <div class="rule-value">8 成<small>青安 3.0 上限</small></div>
+              <div><h3>青安 3.0：額度與資格要一起看</h3><p>一般最高 1,000 萬、新婚 1,200 萬、育兒 1,500 萬；最長 40 年（含 5 年寬限）。申貸時未滿 50 歲、年所得不逾 200 萬，且年齡＋年限不逾 80。</p><span class="source-stamp">官方｜查核 2026.10.01</span></div>
+              <a class="source-link" href="https://www.nta.gov.tw/singlehtml/108?sectioninfo=5097763" target="_blank" rel="noopener">國庫署原則</a>
+            </article>
+            <article class="rule-card">
+              <div class="rule-value">3,500<small>萬元 · 台北市</small></div>
+              <div><h3>青安 3.0 房屋總價天花板</h3><p>鑑價或買賣總價取較高者：台北 3,500 萬、新北與新竹縣市 2,500 萬、其他縣市 2,000 萬。</p><span class="source-stamp">官方｜查核 2026.10.01</span></div>
+              <a class="source-link" href="https://www.nta.gov.tw/singlehtml/109" target="_blank" rel="noopener">國庫署問答</a>
+            </article>
+            <article class="rule-card">
+              <div class="rule-value">科目 1<small>聯徵購屋貸款</small></div>
+              <div><h3>「首購」不只是人生第一次買房</h3><p>簡報以「聯徵第一筆自用住宅購屋貸款」說明首購；逐字稿則強調申請時的購屋貸款筆數。繼承、店面、公司廠房與實際用途仍需個案判斷。</p></div>
+              <span class="tag deck">簡報＋口述</span>
+            </article>
+            <article class="rule-card">
+              <div class="rule-value">3 個月<small>常見金流區間</small></div>
+              <div><h3>頭期款必須能說明來源</h3><p>逐字稿提到銀行常調閱近 3 個月存摺，但「看不到」不代表合規。應如實說明資金來源、借貸關係與實際用途。</p></div>
+              <span class="tag risk">不可用來規避查核</span>
+            </article>
+          </div>
+        </section>
+
+        <section id="ratios">
+          <div class="section-head">
+            <div><div class="kicker">04 · Credit Lens</div><h2>財力認定的三條路</h2></div>
+            <p class="section-intro">以下門檻來自簡報與逐字稿，屬特定分享中的銀行審查口徑，不是公開承諾，也不保證核貸。</p>
+          </div>
+          <div class="ratio-board">
+            <div class="ratio-row"><div class="ratio-title">收支比</div><div class="formula">每月負債支出 ÷ 認列月收入</div><div class="threshold">≤ 70%</div></div>
+            <div class="ratio-row"><div class="ratio-title">資產比</div><div class="formula">名下總資產 ÷ 名下總負債</div><div class="threshold">≥ 170%</div></div>
+            <div class="ratio-row"><div class="ratio-title">流動比</div><div class="formula">金融資產 ÷ 名下總負債</div><div class="threshold">≥ 20–25%</div></div>
+            <div class="ratio-note"><strong>重要校正：</strong>簡報第 15 頁把收支比寫成「月收入／負債月支出需小於 70%」，但逐字稿的案例算法實際是「負債支出／收入不超過約 70%」。本頁依案例邏輯整理，送件時仍須向銀行確認。</div>
+          </div>
+          <div class="asset-grid" aria-label="金融資產認列口述整理">
+            <div class="asset"><strong>存款</strong><span>口述：看近 3 個月平均，不只看單日餘額。</span></div>
+            <div class="asset"><strong>股票</strong><span>口述：以對帳單或持有證明評估，案例中採市值認列。</span></div>
+            <div class="asset"><strong>儲蓄型保單</strong><span>口述：以保單價值準備金／解約金等可證明價值判讀。</span></div>
+            <div class="asset"><strong>投資型保單</strong><span>口述案例採 7 折認列，實際仍看商品與最新內規。</span></div>
+          </div>
+        </section>
+
+        <section id="cases">
+          <div class="section-head">
+            <div><div class="kicker">05 · Case Files</div><h2>案例拆解</h2></div>
+            <p class="section-intro">案例的價值在於看懂「銀行怎麼想」，不是複製答案。以下已把語音中的跳接與口誤整理成計算脈絡。</p>
+          </div>
+          <div class="case-grid">
+            <article class="case-card">
+              <div class="case-top"><span class="tag oral">00:11:47</span><h3>板橋 3,000 萬房屋，想貸 2,400 萬</h3><p>無原貸款；月薪 10 萬；股票 500 萬；投資型保單 200 萬。</p><span class="source-stamp">簡報 P.16＋逐字稿</span></div>
+              <div class="case-body">
+                <div class="calc">金融資產 ≈ 500 + 200×70% = 640 萬<br>流動比 ≈ 640 ÷ 2,400 = 26.7%</div>
+                <div class="verdict"><span class="dot"></span>口述結論：收入路徑可能吃緊，流動比路徑有機會。</div>
+                <p>重點：同一位客戶，換一條財力認定路徑，結果可能不同。</p>
+              </div>
+              <div class="case-foot">假設負債僅有本筆房貸；實際仍要扣除信貸、卡費月付與其他房貸。</div>
+            </article>
+
+            <article class="case-card">
+              <div class="case-top"><span class="tag oral">00:15:46</span><h3>中山 1,200 萬房屋，月薪 5 萬</h3><p>股票 100 萬、定存 50 萬；若貸 8 成，貸款約 960 萬。</p><span class="source-stamp">簡報 P.16＋逐字稿</span></div>
+              <div class="case-body">
+                <div class="calc">口述認列月收入 ≈ 5萬×14÷12 = 5.83萬<br>若月付約 4萬，收支比 ≈ 68.6%</div>
+                <div class="verdict"><span class="dot"></span>口述結論：在 70% 線內，可能算得過。</div>
+                <p>重點：以月薪資料進件時，口述稱可能把年終／獎金折算進月收入；報稅所得則另算。</p>
+              </div>
+              <div class="case-foot">「乘 14 再除 12」屬口述內規，不是公開固定公式。</div>
+            </article>
+
+            <article class="case-card">
+              <div class="case-top"><span class="tag oral">00:05:06</span><h3>年輕借款人，收入普通但保單價值高</h3><p>案例：20 歲左右、月收入約 5–6 萬，保單價值約 800–900 萬，購買 2,000 多萬住宅。</p></div>
+              <div class="case-body">
+                <div class="calc">核心不是年齡本身，而是：<br>保單價值＋信用條件＋共同還款／保證安排</div>
+                <div class="verdict warn"><span class="dot"></span>口述結論：財力可被認列，但條件與保證人仍是個案審查。</div>
+                <p>重點：18 歲以上不等於一定能獨立核貸；學生、收入穩定性與家庭資金來源都會被問。</p>
+              </div>
+              <div class="case-foot">勿把贈與或他人資金包裝成借款人自己的財力。</div>
+            </article>
+
+            <article class="case-card">
+              <div class="case-top"><span class="tag risk">00:39:04</span><h3>現金收入者，以既有房產逐步增貸</h3><p>案例：房值約 1,400–1,500 萬、無貸款、固定收入難證明、現金約 80 萬。</p></div>
+              <div class="case-body">
+                <div class="calc">口述路徑：先小額核貸 → 累積可證明金融資產 → 數月後再評估額度</div>
+                <div class="verdict warn"><span class="dot"></span>可理解為分階段建立財力，但不應做循環灌水。</div>
+                <p>重點：每一次貸款都要有真實用途、可承擔還款能力與完整揭露；借來的錢仍是負債。</p>
+              </div>
+              <div class="case-foot">不建議把同一筆借款反覆包裝成新資產，或以短期金流製造財力表象。</div>
+            </article>
+          </div>
+
+          <div class="risk-box" style="margin-top:20px">
+            <div class="risk-icon">×</div>
+            <div><h3>逐字稿裡有幾段不能當成教學</h3><p>錄音提到同一筆資金在存款、股票與親友帳戶間移轉，或刻意讓金額看起來不一致。這類作法可能造成資金來源、財力與貸款用途的不實呈現。</p>
+              <ul class="risk-list"><li>不要隱匿借款、贈與或頭期款真實來源。</li><li>不要用同一筆資金重複證明多份資產。</li><li>不要為了通過照會而設計不一致或不真實的說法。</li><li>正確作法是先請銀行以書面列出需要的證明與可接受的資金路徑。</li></ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="products">
+          <div class="section-head">
+            <div><div class="kicker">06 · Product Logic</div><h2>三種房貸怎麼判讀</h2></div>
+            <p class="section-intro">名稱看起來很像，現金流與到期風險卻完全不同。先問用途，再談利率。</p>
+          </div>
+          <div class="product-table">
+            <article class="product"><h3>分期型</h3><p>每月攤還本金與利息，到期時原則上清償完畢。</p><ul><li>利率通常較低</li><li>本金還進去後，通常不能再動用</li><li>適合穩定還款、希望債務逐年下降</li></ul></article>
+            <article class="product"><h3>循環型／理財型</h3><p>核給額度後隨借隨還，按實際動用金額計息。</p><ul><li>資金彈性高</li><li>利率通常較高</li><li>年期較短，存在續約或到期還本風險</li></ul></article>
+            <article class="product featured"><h3>回復型</h3><p>分期型主約搭配可回復額度；已還本金轉成可動用額度。</p><ul><li>主約維持分期型利率邏輯</li><li>再動用額度後，總負債可能長期不降</li><li>不是「免費 20 年寬限」，而是以再動用維持現金流</li></ul></article>
+          </div>
+          <div class="risk-box" style="margin-top:18px; background:#fff9ed; border-color:rgba(154,100,30,.25)">
+            <div class="risk-icon" style="background:var(--amber)">!</div>
+            <div><h3 style="color:#6f4818">回復型真正要問的是「退場」</h3><p>如果投資收益不如預期、利率上升、合約到期時年齡過高或無法轉貸，仍可能需要一次還本。拿來做傳承或投資規劃前，要先寫出最差情境的還款來源。</p></div>
+          </div>
+        </section>
+
+        <section id="quotes">
+          <div class="section-head">
+            <div><div class="kicker">07 · Lines to Keep</div><h2>值得留下的金句</h2></div>
+            <p class="section-intro">保留原意，去掉口語贅詞；同時標明是逐字稿原句或編者濃縮。</p>
+          </div>
+          <div class="quote-stage">
+            <div class="quote-main"><blockquote>「三個只要有一個過，案件就過了。」</blockquote><div class="quote-meta">逐字稿原意 · 00:11:32｜收支比、資產比、流動比</div></div>
+            <div class="quote-side">
+              <div class="mini-quote"><p>「買了房，銀行才開始審；所以簽約前要先把幾個問題確認清楚。」</p><small>逐字稿順語 · 00:16:54</small></div>
+              <div class="mini-quote"><p>「房子貴的是土地；精華區老屋，不一定因屋齡直接失去貸款條件。」</p><small>逐字稿順語 · 00:31:20</small></div>
+              <div class="mini-quote"><p>額度是結果，退場才是策略。</p><small>編者濃縮 · 回復型房貸風險</small></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="checklist">
+          <div class="section-head">
+            <div><div class="kicker">08 · Before You Sign</div><h2>簽約前六件事</h2></div>
+            <p class="section-intro">把「先買再審」的風險，改成一張可跟銀行逐項核對的清單。</p>
+          </div>
+          <div class="checklist">
+            <div class="check"><span>1</span><div><strong>調聯徵與財產清單</strong><p>確認現有購屋貸款筆數、信貸、卡費月付與保證債務。</p></div></div>
+            <div class="check"><span>2</span><div><strong>先算三種財力路徑</strong><p>收入、總資產、金融資產各自試算，不要只問月薪夠不夠。</p></div></div>
+            <div class="check"><span>3</span><div><strong>查謄本與實際用途</strong><p>住宅、店面、一般事務所、工業宅、山坡地等會影響成數與年期。</p></div></div>
+            <div class="check"><span>4</span><div><strong>保留頭期款證明</strong><p>準備贈與、借款、解約、薪資與交易憑證，讓每筆來源可追溯。</p></div></div>
+            <div class="check"><span>5</span><div><strong>用「無寬限」先壓力測試</strong><p>先確認本息攤還也能承擔，再把寬限期視為緩衝，不是必要條件。</p></div></div>
+            <div class="check"><span>6</span><div><strong>取得書面試算與保留條款</strong><p>在買賣契約中處理貸款成數不足的風險，避免只依口頭承諾。</p></div></div>
+          </div>
+        </section>
+
+        <section id="sources">
+          <div class="section-head">
+            <div><div class="kicker">09 · Source Notes</div><h2>來源與界線</h2></div>
+            <p class="section-intro">這是學習筆記，不是北富銀正式授信文件，也不是個人化財務、法律或稅務建議。</p>
+          </div>
+          <div class="source-grid">
+            <article class="source-card"><h3>原始簡報</h3><p>《房貸市場分享｜理財也理債》，26 頁，檔案建立日期 2026/9/24。簡報中的利率、成數與銀行優勢視為當時分享內容。</p></article>
+            <article class="source-card"><h3>錄音逐字稿</h3><p>約 64 分鐘、3 位語者。ASR 文字含口誤、漏字與同音誤辨；本頁只整理可由上下文確認的內容。</p></article>
+            <article class="source-card"><h3>官方查核</h3><p><a href="https://www.cbc.gov.tw/tw/cp-302-192864-4319f-1.html" target="_blank" rel="noopener">中央銀行 2026/9/17 決議</a>、<a href="https://www.nta.gov.tw/singlehtml/108?sectioninfo=5097763" target="_blank" rel="noopener">青安 3.0 貸款原則</a>、<a href="https://www.nta.gov.tw/singlehtml/109" target="_blank" rel="noopener">青安 3.0 問答</a>。</p></article>
+            <article class="source-card"><h3>使用方式</h3><p>把這頁當作與房貸專員對話的提問清單。真正送件前，要求承辦人確認：適用方案、認列財力、成數、年期、利率、寬限與提前清償條款。</p></article>
+          </div>
+        </section>
+
+        <footer><span>北富銀房貸分享筆記 · 更新於 2026.10.02</span><span>規則會變，決策前請重新查證。</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="mobile-nav" aria-label="手機快捷導覽">
+    <a href="#calculator"><span>01</span>試算</a><a href="#policy"><span>02</span>規則</a><a href="#cases"><span>03</span>案例</a><a href="#checklist"><span>04</span>清單</a>
+  </div>
+  <script>
+    const links = [...document.querySelectorAll('.rail nav a, .mobile-nav a')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-18% 0px -72% 0px' });
+    sections.forEach(section => observer.observe(section));
+
+    const fields = ['monthlyIncome', 'mortgagePayment', 'otherMonthlyDebt', 'totalAssets', 'financialAssets', 'totalDebt'];
+    const byId = id => document.getElementById(id);
+    const incomeRoute = byId('incomeRoute');
+    const incomeValue = byId('incomeValue');
+    const incomeNote = byId('incomeNote');
+    const incomeMeter = byId('incomeMeter');
+    const assetRoute = byId('assetRoute');
+    const assetValue = byId('assetValue');
+    const assetNote = byId('assetNote');
+    const assetMeter = byId('assetMeter');
+    const liquidRoute = byId('liquidRoute');
+    const liquidValue = byId('liquidValue');
+    const liquidNote = byId('liquidNote');
+    const liquidMeter = byId('liquidMeter');
+    const routeHeadline = byId('routeHeadline');
+    const routeSummary = byId('routeSummary');
+    const number = id => Math.max(0, Number(byId(id).value) || 0);
+    const setRoute = (route, valueEl, noteEl, meterEl, value, state, note, meter) => {
+      route.classList.remove('pass', 'warn', 'fail');
+      route.classList.add(state);
+      valueEl.textContent = Number.isFinite(value) ? `${value.toFixed(1)}%` : '—';
+      noteEl.textContent = note;
+      meterEl.style.width = `${Math.max(0, Math.min(100, meter))}%`;
+    };
+
+    function calculateRoutes() {
+      const income = number('monthlyIncome');
+      const monthlyDebt = number('mortgagePayment') + number('otherMonthlyDebt');
+      const assets = number('totalAssets');
+      const financial = number('financialAssets');
+      const debt = number('totalDebt');
+      const incomeRatio = income > 0 ? monthlyDebt / income * 100 : NaN;
+      const assetRatio = debt > 0 ? assets / debt * 100 : NaN;
+      const liquidRatio = debt > 0 ? financial / debt * 100 : NaN;
+      const incomePass = Number.isFinite(incomeRatio) && incomeRatio <= 70;
+      const assetPass = Number.isFinite(assetRatio) && assetRatio >= 170;
+      const liquidPass = Number.isFinite(liquidRatio) && liquidRatio >= 25;
+      const liquidNear = Number.isFinite(liquidRatio) && liquidRatio >= 20 && liquidRatio < 25;
+
+      setRoute(incomeRoute, incomeValue, incomeNote, incomeMeter, incomeRatio, incomePass ? 'pass' : 'fail', incomePass ? '在分享門檻內；仍要納入其他月付。' : '超過 70% 或缺少收入資料。', Number.isFinite(incomeRatio) ? incomeRatio / 70 * 100 : 0);
+      setRoute(assetRoute, assetValue, assetNote, assetMeter, assetRatio, assetPass ? 'pass' : 'fail', assetPass ? '達到分享中的 170% 門檻。' : '低於 170% 或缺少負債資料。', Number.isFinite(assetRatio) ? assetRatio / 170 * 100 : 0);
+      setRoute(liquidRoute, liquidValue, liquidNote, liquidMeter, liquidRatio, liquidPass ? 'pass' : liquidNear ? 'warn' : 'fail', liquidPass ? '達到較保守的 25% 判讀線。' : liquidNear ? '落在口述 20–25% 區間，應先向承辦確認。' : '低於口述區間或缺少負債資料。', Number.isFinite(liquidRatio) ? liquidRatio / 25 * 100 : 0);
+
+      const routes = [];
+      if (incomePass) routes.push('收支比');
+      if (assetPass) routes.push('資產比');
+      if (liquidPass) routes.push('流動比');
+      if (routes.length) {
+        routeHeadline.textContent = `目前較有機會走：${routes.join('、')}`;
+        routeSummary.textContent = '下一步要補齊資金來源、信用與房屋條件，再請承辦確認認列方式。';
+      } else if (liquidNear) {
+        routeHeadline.textContent = '流動比接近口述門檻';
+        routeSummary.textContent = '20–25% 的口徑有落差，送件前應請承辦以最新內規書面確認。';
+      } else {
+        routeHeadline.textContent = '目前三條路都未達分享門檻';
+        routeSummary.textContent = '先檢查數字是否齊全，再評估降低負債、增加可證明資產或調整貸款金額。';
+      }
+    }
+
+    fields.forEach(id => byId(id).addEventListener('input', calculateRoutes));
+    byId('casePreset').addEventListener('click', () => {
+      const preset = { monthlyIncome: 10, mortgagePayment: 9, otherMonthlyDebt: 0, totalAssets: 3640, financialAssets: 640, totalDebt: 2400 };
+      Object.entries(preset).forEach(([id, value]) => { byId(id).value = value; });
+      calculateRoutes();
+    });
+    byId('clearForm').addEventListener('click', () => {
+      fields.forEach(id => { byId(id).value = ''; });
+      calculateRoutes();
+      byId('monthlyIncome').focus();
+    });
+    byId('copyResult').addEventListener('click', async event => {
+      const text = `北富銀房貸三路快篩\n收支比：${incomeValue.textContent}\n資產比：${assetValue.textContent}\n流動比：${liquidValue.textContent}\n判讀：${routeHeadline.textContent}\n提醒：此為學習試算，非核貸承諾。`;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (_) {
+        const temp = document.createElement('textarea');
+        temp.value = text;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        temp.remove();
+      }
+      const button = event.currentTarget;
+      const original = button.textContent;
+      button.textContent = '已複製';
+      setTimeout(() => { button.textContent = original; }, 1400);
+    });
+    calculateRoutes();
+  </script>
+</body>
+</html>
